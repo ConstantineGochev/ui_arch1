@@ -1,3 +1,5 @@
+import Button from '../button/index.jsx'
+
 function _init_mobile_navigation() {
     
     create_mobile_container()
@@ -12,12 +14,14 @@ const elements = {
 }
 function create_mobile_container() {
     // First append the modal window to the #root.
+    var btn_one = new Button()
     elements.root().append(elements.modal_window)
-
+    
     let mobile_container = $(elements.mobile_nav_container);
     let close_btn = $(elements.close_button_container);
     let mobile_list = $(elements.mobile_list);
-
+    
+    btn_one.create('HAHA', mobile_list)
     // Appending the list items to the unordered-list.
     mobile_list
     .append(elements.mobile_item('FAQ'))

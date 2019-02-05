@@ -5,7 +5,7 @@ var webpack = require('webpack');
 var config = {
   mode: 'development',
   entry: {
-    app: './scripts/index.js',
+    app: './scripts/index.jsx',
 
   },
   output: {
@@ -15,11 +15,12 @@ var config = {
   },
   module: {
     rules: [{
-        test: /\.js?$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['env']
+          presets: ['react','es2015'],
+          plugins: ["transform-object-rest-spread"]
         }
       },
       {
