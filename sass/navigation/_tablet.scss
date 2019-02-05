@@ -1,0 +1,13 @@
+$tablet_resolution: "only screen and (min-width: 361px) and (max-width: 557px)";
+
+@media #{$tablet_resolution} {
+    #root {
+        background: aqua;
+    }
+    #nav-items-wrapper {
+                
+    }
+    #mobile-menu {
+        display: none;
+    }
+}

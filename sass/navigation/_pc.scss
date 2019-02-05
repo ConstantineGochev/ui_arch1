@@ -1,0 +1,26 @@
+$pc_resolution: "only screen and (min-width: 558px)";
+$distance: 0.5rem 1rem;
+$border_test: 1px solid rgb(255, 196, 196);
+
+@media #{$pc_resolution} {
+   #root {
+    background: rgb(235, 48, 110);
+
+    #nav-items-wrapper {
+      justify-content: center;
+      align-items: center;
+
+       .nav-item {
+         cursor: pointer;
+          margin: $distance;
+          padding: $distance;
+          border: $border_test;
+          border-radius: 6px;
+       }   
+     }
+     #mobile-menu {
+        display: none;
+     }
+   }
+
+}

@@ -1,0 +1,95 @@
+$mobile_resolution: "only screen and (max-width: 360px)";
+
+@media #{$mobile_resolution} {
+    #root {
+        background: yellowgreen;
+        #modal-window {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            background-color: rgba(0, 0, 0,0.5);
+            display: none;
+        }
+        #nav-items-wrapper {
+                display: none;
+
+            .nav-item {
+                    margin: 1rem;
+             }
+        }
+        #mobile-menu {
+            padding: 0 1rem;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: -53%;
+            width: 50vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(
+            rgba(255, 170, 255,0.9),
+            rgba(253, 164, 253, 0.9),
+            rgba(250, 109, 250, 0.9),
+            rgba(228, 0, 228, 0.9));
+            
+            #mobile-items {
+                display: flex;
+                flex-direction: column;
+
+                li {
+                    color: rgb(255, 255, 255);
+                    background: rgb(93, 0, 121);
+                    padding: 6px 0;
+                    margin: 0;
+                    position: absolute;
+                    width: 70%;
+                    top: -10%;
+                    left: 0;
+                    cursor: pointer;
+                    margin-left: 15%;
+                }
+            }
+            p {
+                text-align: right;
+                i {
+                    width: 25px;
+                    height: 25px;
+                    background: rgba(0, 0, 0, 0.6);
+                    padding: 5px;
+                    color:rgb(255, 255, 255);
+                    cursor: pointer;
+                    margin-top: 5px;
+                    transition: background 0.5s, color 0.5s;
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.6);
+                        color: rgb(0, 0, 0);
+                    }
+                }
+            }
+
+            li {
+                margin: 5px;
+                text-align: center;
+        
+                a {
+                 width: 80%;
+                }
+            }
+        }
+    }
+
+    .toggle-icon {
+        display: inline-block;
+        &::after {
+            
+            font-family: FontAwesome;
+            font-style: normal;
+            content: "\f003";
+            cursor: pointer;
+        }
+    }
+}

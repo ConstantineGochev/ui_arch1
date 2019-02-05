@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./sass/main.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js??ref--6-2");
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"* {\\n  padding: 0;\\n  margin: 0;\\n  box-sizing: border-box;\\n  list-style-type: none; }\\n\\n#root #nav-items-wrapper {\\n  display: flex; }\\n\\n@media only screen and (min-width: 558px) {\\n  #root {\\n    background: #eb306e; }\\n    #root #nav-items-wrapper {\\n      justify-content: center;\\n      align-items: center; }\\n      #root #nav-items-wrapper .nav-item {\\n        cursor: pointer;\\n        margin: 0.5rem 1rem;\\n        padding: 0.5rem 1rem;\\n        border: 1px solid #ffc4c4;\\n        border-radius: 6px; }\\n    #root #mobile-menu {\\n      display: none; } }\\n\\n@media only screen and (min-width: 361px) and (max-width: 557px) {\\n  #root {\\n    background: aqua; }\\n  #mobile-menu {\\n    display: none; } }\\n\\n@media only screen and (max-width: 360px) {\\n  #root {\\n    background: yellowgreen; }\\n    #root #modal-window {\\n      width: 100vw;\\n      height: 100vh;\\n      position: fixed;\\n      top: 0;\\n      left: 0;\\n      z-index: 999;\\n      background-color: rgba(0, 0, 0, 0.5);\\n      display: none; }\\n    #root #nav-items-wrapper {\\n      display: none; }\\n      #root #nav-items-wrapper .nav-item {\\n        margin: 1rem; }\\n    #root #mobile-menu {\\n      padding: 0 1rem;\\n      position: fixed;\\n      z-index: 9999;\\n      top: 0;\\n      left: -53%;\\n      width: 50vw;\\n      height: 100vh;\\n      display: flex;\\n      flex-direction: column;\\n      background: linear-gradient(rgba(255, 170, 255, 0.9), rgba(253, 164, 253, 0.9), rgba(250, 109, 250, 0.9), rgba(228, 0, 228, 0.9)); }\\n      #root #mobile-menu #mobile-items li {\\n        margin: 0;\\n        position: absolute;\\n        width: 100%;\\n        top: -10%;\\n        left: 0; }\\n      #root #mobile-menu p {\\n        text-align: right; }\\n        #root #mobile-menu p i {\\n          cursor: pointer; }\\n      #root #mobile-menu li {\\n        margin: 5px;\\n        text-align: center; }\\n        #root #mobile-menu li a {\\n          width: 80%; }\\n  .toggle-icon {\\n    display: inline-block; }\\n    .toggle-icon::after {\\n      font-family: FontAwesome;\\n      font-style: normal;\\n      content: \\\"\\\\f003\\\";\\n      cursor: pointer; } }\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./sass/main.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js??ref--6-2");
 
 /***/ }),
 
@@ -197,6 +197,42 @@ eval("\nvar content = __webpack_require__(/*! !../node_modules/css-loader/dist/c
 
 /***/ }),
 
+/***/ "./scripts/animations/toggle_menu.js":
+/*!*******************************************!*\
+  !*** ./scripts/animations/toggle_menu.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nfunction _init_toggle_menu() {\n    toggle_menu();\n}\n// Creating Toggle Menu.\n\nfunction toggle_menu() {\n    console.log('asd');\n\n    var toggle_btn = $('#menu-container > p');\n    console.log(toggle_btn);\n    var modal_and_close_icon = $('#close-icon-container > i, #modal-window');\n\n    var mobile_menu = $('#mobile-menu');\n    var modal_window = $('#modal-window');\n    console.log(modal_window);\n    toggle_btn.click(function () {\n        open_mobile_menu(modal_window, mobile_menu);\n    });\n    modal_and_close_icon.click(function () {\n        close_mobile_menu(modal_window, mobile_menu);\n    });\n\n    function open_mobile_menu(modal_window, mobile_menu) {\n        modal_window.show();\n\n        mobile_menu.animate({\n            left: '0%'\n        }, 'slow');\n\n        var top_percent = 40;\n        for (var i = 0; i < 5; i++) {\n            $('#mobile-items > li:nth-child(' + (i + 1) + ')').animate({\n                top: top_percent + '%'\n            }, 'slow');\n\n            top_percent -= 6;\n        }\n    }\n    function close_mobile_menu(modal_window, mobile_menu) {\n        modal_window.hide();\n        mobile_menu.animate({\n            left: '-53%'\n        }, 'slow');\n\n        for (var i = 0; i < 5; i++) {\n            $('#mobile-items > li:nth-child(' + (i + 1) + ')').animate({\n                top: '-10%'\n            }, 'slow');\n        }\n    }\n}\n\nexports._init_toggle_menu = _init_toggle_menu;\n\n//# sourceURL=webpack:///./scripts/animations/toggle_menu.js?");
+
+/***/ }),
+
+/***/ "./scripts/create_elements/header/mobile_navigation.js":
+/*!*************************************************************!*\
+  !*** ./scripts/create_elements/header/mobile_navigation.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nfunction _init_mobile_navigation() {\n\n    create_mobile_container();\n}\nvar elements = {\n    modal_window: '<div id=\"modal-window\"></div>',\n    mobile_nav_container: '<div id=\"mobile-menu\"></div>',\n    close_button_container: '<p id=\"close-icon-container\"><i class=\"fas fa-times\"></i></p>',\n    mobile_list: '<ul id=\"mobile-items\"></ul>',\n    mobile_item: function mobile_item(name) {\n        return '<li><a class=\"test\">' + name + '</a></li>';\n    },\n    root: function root() {\n        return $('#root');\n    }\n};\nfunction create_mobile_container() {\n    // First append the modal window to the #root.\n    elements.root().append(elements.modal_window);\n\n    var mobile_container = $(elements.mobile_nav_container);\n    var close_btn = $(elements.close_button_container);\n    var mobile_list = $(elements.mobile_list);\n\n    // Appending the list items to the unordered-list.\n    mobile_list.append(elements.mobile_item('Home')).append(elements.mobile_item('About')).append(elements.mobile_item('Contacts')).append(elements.mobile_item('FAQ'));\n\n    // Appending the close button and the list to the mobile container\n    mobile_container.append(close_btn).append(mobile_list);\n\n    // Append the filled mobile container to the #root\n\n    mobile_container.appendTo(elements.root());\n}\nexports._init_mobile_navigation = _init_mobile_navigation;\n\n//# sourceURL=webpack:///./scripts/create_elements/header/mobile_navigation.js?");
+
+/***/ }),
+
+/***/ "./scripts/create_elements/header/regular_navigation.js":
+/*!**************************************************************!*\
+  !*** ./scripts/create_elements/header/regular_navigation.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nfunction _init_regular_navigation() {\n    console.log($);\n    create_container();\n}\nvar elements = {\n    menu_container: '<div id=\"menu-container\"></div>',\n    nav_items_container: '<ul id=\"nav-items-wrapper\"></ul>',\n    toggle_menu_icon_container: '<p class=\"toggle-icon\"></p>',\n    nav_item: function nav_item(name) {\n        return '<li class=\"nav-item\">' + name + '</li>';\n    },\n    root: function root() {\n        return $('#root');\n    }\n};\nfunction create_container() {\n    var menu_container = $(elements.menu_container);\n    var nav_items_wrapper = $(elements.nav_items_container);\n    var toggle_menu_icon_container = $(elements.toggle_menu_icon_container);\n\n    // Appending the list items to the unordered-list.\n    nav_items_wrapper.append(elements.nav_item('Home')).append(elements.nav_item('About')).append(elements.nav_item('Contacts')).append(elements.nav_item('FAQ'));\n\n    // Appending the toggle button and the list to the mobile container\n    menu_container.append(toggle_menu_icon_container);\n    menu_container.append(nav_items_wrapper);\n\n    // Append the filled mobile container to the #root\n    menu_container.appendTo(elements.root());\n}\n\nexports._init_regular_navigation = _init_regular_navigation;\n\n//# sourceURL=webpack:///./scripts/create_elements/header/regular_navigation.js?");
+
+/***/ }),
+
 /***/ "./scripts/index.js":
 /*!**************************!*\
   !*** ./scripts/index.js ***!
@@ -205,19 +241,7 @@ eval("\nvar content = __webpack_require__(/*! !../node_modules/css-loader/dist/c
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _index = __webpack_require__(/*! ./menu/index */ \"./scripts/menu/index.js\");\n\n__webpack_require__(/*! expose-loader?$!jquery */ \"./node_modules/expose-loader/index.js?$!./node_modules/jquery/dist/jquery.js-exposed?b7a9\");\n__webpack_require__(/*! ../sass/main.scss */ \"./sass/main.scss\");\n\n(0, _index.test)();\n\n//# sourceURL=webpack:///./scripts/index.js?");
-
-/***/ }),
-
-/***/ "./scripts/menu/index.js":
-/*!*******************************!*\
-  !*** ./scripts/menu/index.js ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n   value: true\n});\nfunction test() {\n   console.log($);\n}\nexports.test = test;\n\n//# sourceURL=webpack:///./scripts/menu/index.js?");
+eval("\n\nvar _regular_navigation = __webpack_require__(/*! ./create_elements/header/regular_navigation */ \"./scripts/create_elements/header/regular_navigation.js\");\n\nvar _mobile_navigation = __webpack_require__(/*! ./create_elements/header/mobile_navigation */ \"./scripts/create_elements/header/mobile_navigation.js\");\n\nvar _toggle_menu = __webpack_require__(/*! ./animations/toggle_menu */ \"./scripts/animations/toggle_menu.js\");\n\n__webpack_require__(/*! expose-loader?$!jquery */ \"./node_modules/expose-loader/index.js?$!./node_modules/jquery/dist/jquery.js-exposed?b7a9\");\n__webpack_require__(/*! ../sass/main.scss */ \"./sass/main.scss\");\n\n(0, _regular_navigation._init_regular_navigation)();\n(0, _mobile_navigation._init_mobile_navigation)();\n(0, _toggle_menu._init_toggle_menu)();\n\n//# sourceURL=webpack:///./scripts/index.js?");
 
 /***/ })
 
