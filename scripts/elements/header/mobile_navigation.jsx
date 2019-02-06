@@ -4,15 +4,13 @@ import {root} from '../../constants.jsx'
 import {toggle_menu} from '../.././animations/toggle_menu'
 
 class MobileNav implements Navigation {
-    constructor(_nav_items_texts : Array<string>, options : Object) {
+    constructor(_nav_items : Array<Element>, options : Object) {
   
-       this.nav_items_texts = _nav_items_texts
+       this.nav_items = _nav_items
        this.mobile_nav_container = $('<div id="mobile-menu"></div>')
        this.close_button_container = $('<p id="close-icon-container"><i class="fas fa-times"></i></p>')
        this.mobile_list = $('<ul id="mobile-items"></ul>')
-       this.create_nav_items = this.create_nav_items.bind(this)
        this.modal_window = $('<div id="modal-window"></div>')
-       this.get_mobile_item = (text) => $(`<li><a class="test">${text}</a></li>`)
        this.init()
     }
 
@@ -30,9 +28,9 @@ class MobileNav implements Navigation {
 
    create_nav_items() : void {
 
-       for(let i = 0; i < this.nav_items_texts.length; i++) {
+       for(let i = 0; i < this.nav_items.length; i++) {
 
-           this.mobile_list.append(this.get_mobile_item(this.nav_items_texts[i]))
+           this.mobile_list.append(this.nav_items[i])
        }
 
    }

@@ -2,6 +2,10 @@ $pc_resolution: "only screen and (min-width: 558px)";
 $distance: 0.5rem 1rem;
 $border_test: 1px solid rgb(255, 196, 196);
 
+#menu-container {
+   
+}
+
 @media #{$pc_resolution} {
    #root {
     background: rgb(235, 48, 110);
