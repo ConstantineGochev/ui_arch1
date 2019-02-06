@@ -1,6 +1,4 @@
-function _init_toggle_menu() {
-    toggle_menu()
-}
+
 // Creating Toggle Menu.
 
 function toggle_menu() {
@@ -47,5 +45,5 @@ function toggle_menu() {
 }
 
 export {
-    _init_toggle_menu,
+    toggle_menu,
 }
