@@ -3,6 +3,7 @@ require("../sass/main.scss")
 
 import { FullScreenNav } from './elements/header/full_screen_nav.jsx'
 import { MobileNav } from './elements/header/mobile_navigation.jsx'
+import SectionFactory from './elements/sections/factory.jsx'
 import {base_button } from './elements/button/index.jsx'
 import {menu_items} from './constants.jsx'
 
@@ -24,6 +25,7 @@ function _init() {
     
     new FullScreenNav(get_menu_items())
     new MobileNav(get_menu_items())
+    SectionFactory("BannerSection")
 }
 
 _init()
