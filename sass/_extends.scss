@@ -1,0 +1,28 @@
+%shrink-nav {  
+    animation-name: shrink_nav;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+ 
+ @keyframes shrink_nav {
+    from {
+       padding: 1rem 0;
+    }
+    to {
+       padding: 0;
+    }
+ }
+}
+%enlarge-nav {
+    animation-name: enlarge_nav;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+ 
+ @keyframes enlarge_nav {
+    from {
+       padding: 0;
+    }
+    to {
+       padding: 1rem 0;
+    }
+ }
+}
