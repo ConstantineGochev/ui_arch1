@@ -1,0 +1,42 @@
+#banner-container {
+  background-image: url("https://images.pexels.com/photos/843633/pexels-photo-843633.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  height: 150vh;
+  width: 100%;
+  display: flex;
+  padding: 0.5rem;
+  padding-top: 5rem;
+
+  .banner {
+    width: $half_basis;
+    display: flex;
+    flex-direction: column;
+    border-radius: $section_border_radius;
+
+    .banner-content {
+      margin-bottom: 0.5rem;
+      border: $inner_sections_border;
+      @extend %flexbox_centered_items;
+      flex-basis: $half_basis;
+      background: rgba(255, 241, 162, 0.4);
+      border-radius: $section_border_radius;
+    }
+    .banner-btns-ul {
+      border: $inner_sections_border;
+      flex-basis: $half_basis;
+      @extend %flexbox_centered_items;
+      background: rgba(255, 241, 162, 0.4);
+      border-radius: $section_border_radius;
+    }
+  }
+  .banner-img {
+    border: $inner_sections_border;
+    width: $half_basis;
+    @extend %flexbox_centered_items;
+    margin-left: 0.5rem;
+    background: rgba(255, 241, 162, 0.4);
+    border-radius: $section_border_radius;
+  }
+}

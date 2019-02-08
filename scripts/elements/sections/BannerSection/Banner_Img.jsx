@@ -1,0 +1,1 @@
+export const Banner_Img = () => $('<p class="banner-img">Banner-Image</p>')

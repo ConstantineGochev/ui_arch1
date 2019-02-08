@@ -1,28 +1,63 @@
-%shrink-nav {  
-    animation-name: shrink_nav;
-    animation-duration: 0.8s;
-    animation-fill-mode: forwards;
- 
- @keyframes shrink_nav {
+%flexbox_centered_items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%shrink-nav {
+  animation-name: shrink_nav;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+
+  @keyframes shrink_nav {
     from {
-       padding: 1rem 0;
+      background: rgba($base_color, 0.9);
+      padding: 0.3rem 0;
     }
     to {
-       padding: 0;
+      background: rgba($base_color, 0);
+      padding: 0;
     }
- }
+  }
 }
 %enlarge-nav {
-    animation-name: enlarge_nav;
-    animation-duration: 0.8s;
-    animation-fill-mode: forwards;
- 
- @keyframes enlarge_nav {
+  animation-name: enlarge_nav;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+
+  @keyframes enlarge_nav {
     from {
-       padding: 0;
+      background: rgba($base_color, 0);
+      padding: 0;
     }
     to {
-       padding: 1rem 0;
+      background: rgba($base_color, 0.9);
+      padding: 0.3rem 0;
     }
- }
+  }
 }
+%enlarge-btns-font {
+  animation-name: enlarge_text;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  @keyframes enlarge_text {
+    from {
+      font-size: 12px;
+    }
+    to {
+      font-size: 13px;
+    }
+  }
+}
+%shrink-btns-font {
+   animation-name: shrink_text;
+   animation-duration: 0.8s;
+   animation-fill-mode: forwards;
+   @keyframes shrink_text {
+     from {
+       font-size: 13px;
+     }
+     to {
+       font-size: 12px;
+     }
+   }
+ }
