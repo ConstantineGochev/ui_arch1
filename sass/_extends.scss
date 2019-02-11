@@ -1,3 +1,19 @@
+%modal_window {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+%fixed_main_nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 %flexbox_centered_items {
   display: flex;
   justify-content: center;
@@ -11,11 +27,11 @@
   @keyframes shrink_nav {
     from {
       background: rgba($base_color, 0.9);
-      padding: 0.3rem 0;
+      padding: 0;
     }
     to {
       background: rgba($base_color, 0);
-      padding: 0;
+      padding: 1rem 0;
     }
   }
 }
@@ -27,37 +43,28 @@
   @keyframes enlarge_nav {
     from {
       background: rgba($base_color, 0);
-      padding: 0;
+      padding: 1rem 0;
     }
     to {
       background: rgba($base_color, 0.9);
-      padding: 0.3rem 0;
+      padding: 0;
     }
   }
 }
-%enlarge-btns-font {
-  animation-name: enlarge_text;
-  animation-duration: 1s;
+%reg_btn_hover {
+  animation-name: reg_btn_hover;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
-  @keyframes enlarge_text {
+
+  @keyframes reg_btn_hover {
     from {
-      font-size: 12px;
+      width: 0%;
     }
     to {
-      font-size: 13px;
+      width: 50%;
     }
   }
 }
-%shrink-btns-font {
-   animation-name: shrink_text;
-   animation-duration: 0.8s;
-   animation-fill-mode: forwards;
-   @keyframes shrink_text {
-     from {
-       font-size: 13px;
-     }
-     to {
-       font-size: 12px;
-     }
-   }
- }
+
+
+

@@ -1,0 +1,28 @@
+@mixin create_grid_container(
+    $width, $height, $justify_items_x, $align_items_y, $rows , $cols, $gap 
+    ) {
+        display: grid;
+        width: $width;
+        height: $height;
+        justify-items: $justify_items_x;
+        align-items: $align_items_y;
+        grid-template-rows: repeat($rows, 1fr);
+        grid-template-columns: repeat($cols, 1fr);
+        grid-gap: $gap;
+}
+@mixin create_flex_container(
+    $direction, $wrap, $justify_content, $align_items
+    ) {
+    display: flex;
+    flex-wrap: $wrap;
+    flex-direction: $direction;
+    justify-content: $justify_content;
+    align-items: $align_items;
+}
+@mixin body_background($color) {
+    background: linear-gradient(to right,
+    lighten($color, 15%),
+    lighten($color, 25%),
+    lighten($color, 30%),
+    );
+}

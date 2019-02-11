@@ -8,7 +8,9 @@ function active_btns(selector,className) {
             nav_items.each(function () {
                 $(this).removeClass(`${className}`)
             })
-            $(this).addClass(`${className}`)
+            if (!$(this).hasClass('special-btn')) {
+                $(this).addClass(`${className}`)
+            }   
         })
     })
 }

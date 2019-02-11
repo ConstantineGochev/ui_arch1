@@ -1,11 +1,31 @@
-$tablet_resolution: "only screen and (min-width: 361px) and (max-width: 557px)";
-
+$tablet_resolution: "only screen and (min-width: 630px) and (max-width: 916px)";
 @media #{$tablet_resolution} {
-    #root {
-        background: aqua;
+    body {
+        padding-top: 2.5rem;
     }
-    #nav-items-wrapper {
-                
+    #menu-container {
+        flex-direction: column;
+        #pc_items_ul {
+            height: auto;
+            margin: 5px 0;
+        }
+        #pc_special_items_ul {
+            
+            margin: 0;
+            margin-bottom: 5px 0;
+            .special-btn {
+                padding: 0.3rem 0.25rem;
+            }
+        }
+        .fa-anchor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0.1rem;
+            font-size: 1.2rem;
+
+        }
     }
     #mobile-menu {
         display: none;

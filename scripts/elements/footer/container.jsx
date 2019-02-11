@@ -1,0 +1,1 @@
+export const Container = () => $('<div id="footer-container"></div>')

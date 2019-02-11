@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round|Cinzel|Josefin+Sans');
 @import 'constants';
+@import 'mixins';
 @import 'extends';
 @import 'keyframes';
 @import 'sections/banner_section';
+@import 'footer/footer';
 
 * {
   padding: 0;
@@ -12,19 +15,109 @@
   letter-spacing: 1px;
 }
 
-html {
-  height: 100%;
+body {
+  @include body_background($base_color);
 }
-
 #root {
-  #nav-items-wrapper {
-
-    display: flex;
+  #modal-window {
+    @extend %modal_window;
   }
 }
-@import "navigation/pc";
+#menu-container {
+  @include create_flex_container(row, wrap, space-around, center);
+  background: rgba(darken($base_color, 10%), 0.5);
+  @extend %fixed_main_nav;
+  .toggle-icon {
+    display: none;
+  }
+  .fa-anchor {
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background-image: linear-gradient(
+      to bottom,
+      darken(rgba(255, 217, 0, 0.8), 5%),
+      darken(rgba(255, 217, 0, 0.8), 10%),
+      darken(rgba(255, 217, 0, 0.8), 15%),
+      darken(rgba(255, 217, 0, 0.8), 20%)
+    );
+    color: lighten($base_color, 25%);
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+}
+#pc_items_ul {
+  @include create_flex_container(row, wrap, flex-end, center);
+  flex-grow: 1;
+  color: white;
+  height: 50px;
+  margin-right: 2rem;
+
+  .regular-btn {
+    font-family: "Cinzel", serif;
+    font-size: 14px;
+    background: none;
+    border: transparent;
+    z-index: 999;
+    color: rgb(0, 1, 36);
+    user-select: $select_none;
+    cursor: pointer;
+    margin: $btn_margin;
+    padding: 0.3rem;
+    font-weight: bold;
+    position: relative;
+  }
+}
+#pc_special_items_ul {
+  @include create_flex_container(row, wrap, center, center);
+  margin-right: 1rem;
+
+  .special-btn {
+    font-family: "Varela Round", sans-serif;
+    border: none;
+    background: rgba(0, 128, 248, 0.8);
+    padding: $btn_special_padding;
+    margin: $btn_special_margin;
+    cursor: pointer;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: -15px;
+      content: "";
+      width: 15px;
+      height: 100%;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+      display: inline-block;
+      background: rgba(0, 128, 248, 0.8);
+    }
+    &:after {
+      position: absolute;
+      top: 0;
+      right: -15px;
+      content: "";
+      width: 15px;
+      height: 100%;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+      display: inline-block;
+      background: rgba(0, 128, 248, 0.8);
+    }
+  }
+}
+#mobile-menu {
+  display: none;
+}
+
+@import "navigation/laptop";
 @import "navigation/tablet";
 @import "navigation/mobile";
+@import "navigation/secondary_mobile"
 
 
 

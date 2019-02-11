@@ -1,0 +1,75 @@
+$secondary_mobile_query: "only screen and (max-width: 513px)";
+
+@media #{$secondary_mobile_query} {
+  #menu-container {
+    justify-content: space-between;
+    .toggle-icon {
+      padding-left: 0.5rem;
+      display: block;
+      .fa-bars {
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
+    .fa-anchor {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 0.7rem;
+      margin: 0;
+    }
+    #pc_items_ul {
+      display: none;
+    }
+    #pc_special_items_ul {
+      flex-direction: column;
+      .special-btn {
+        width: 66px;
+        font-size: 0.5rem;
+        padding: 0.4rem 0.1rem;
+      }
+    }
+  }
+  #mobile-menu {
+    padding: 0 1rem;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: -53%;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+      darken($base_color, 5%),
+      darken($base_color, 10%),
+      darken($base_color, 15%),
+      darken($base_color, 20%)
+    );
+
+    #mobile-items {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        color: rgb(255, 255, 255);
+        background: lighten($base_color, 10%);
+        text-align: center;
+        padding: 6px 0;
+        margin: 0;
+        position: absolute;
+        width: 100%;
+        top: -10%;
+        left: 0;
+        cursor: pointer;
+        &:hover {
+          color: black;
+        }
+      }
+      .mobile-active {
+        color: black;
+        background: lighten(rgb(49, 114, 255), 10%);
+      }
+    }
+  }
+}

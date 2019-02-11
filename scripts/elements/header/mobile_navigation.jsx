@@ -23,17 +23,12 @@ class MobileNav implements Navigation {
         this.mobile_nav_container.append(this.mobile_list)
         this.create_nav_items()
         active_btns($('#mobile-items > li'), 'mobile-active');
-        toggle_menu()
-        
+        toggle_menu() 
     }
 
     create_nav_items(): void {
-
-        for (let i = 0; i < this.nav_items.length; i++) {
-
-            this.mobile_list.append(this.nav_items[i])
-        }
-
+        
+        this.nav_items.forEach(item => this.mobile_list.append(item))
     }
 }
 export {

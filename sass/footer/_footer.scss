@@ -1,0 +1,15 @@
+#footer-container {
+    background: rgba($base_color, 0.3);
+    @include create_grid_container(100%, 50vh, center, center, auto, 3 , 5%);
+    padding: 1rem;
+    margin: 0 auto;
+    border-top: 1px solid rgba(darken($base_color, 20%), 0.5);
+    ul {
+        @include create_flex_container(column, wrap, space-around, center);
+        width: 100%;
+        height: 100%;
+        background: lighten($base_color, 10%);
+        border: 2px solid darken($base_color, 10%);
+        border-radius: $section_border_radius;
+    }
+}

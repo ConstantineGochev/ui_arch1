@@ -1,72 +1,35 @@
-$mobile_resolution: "only screen and (max-width: 360px)";
+$mobile_resolution: "only screen and (min-width: 514px) and (max-width: 629px)";
 
 @media #{$mobile_resolution} {
+  body {
+    padding-top: 2rem;
+  }
+  #menu-container {
+    justify-content: flex-start;
+    align-items: center;
+    .toggle-icon {
+      padding-left: 0.5rem;
+      display: block;
+      .fa-bars {
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
+    .fa-anchor {
+      margin-left: 3.5rem;
+      margin-right: 1rem;
+      font-size: 0.7rem;
+    }
+  }
   #pc_items_ul {
     display: none;
   }
-  #root {
-    background: yellowgreen;
-    #modal-window {
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 999;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: none;
-    }
-    #mobile-menu {
-      padding: 0 1rem;
-      position: fixed;
-      z-index: 9999;
-      top: 0;
-      left: -53%;
-      width: 50vw;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background: linear-gradient(
-        darken($base_color, 5%),
-        darken($base_color, 10%),
-        darken($base_color, 15%),
-        darken($base_color, 20%)
-      );
-
-      #mobile-items {
-        display: flex;
-        flex-direction: column;
-
-        li {
-          color: rgb(255, 255, 255);
-          background: lighten($base_color, 10%);
-          text-align: center;
-          padding: 6px 0;
-          margin: 0;
-          position: absolute;
-          width: 100%;
-          top: -10%;
-          left: 0;
-          cursor: pointer;
-          &:hover {
-            color: black;
-          }
-        }
-        .mobile-active {
-          color: black;
-          background: lighten(rgb(49, 114, 255), 10%);
-        }
-      }
-    }
-  }
-
-  p {
-    text-align: right;
-    padding: 0.5rem;
-    i {
-      display: inline-block;
-      font-size: 1.5rem;
-      cursor: pointer;
+  #pc_special_items_ul {
+    flex-direction: row;
+    .special-btn {
+      font-size: 0.6rem;
+      padding: 0.35rem 0;
+      width: 75px;
     }
   }
 }
