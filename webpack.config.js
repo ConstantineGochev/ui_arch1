@@ -50,8 +50,9 @@ var config = {
           options: '$'
         }]
       },
+      
     ]
-  }
+  },
 };
 
 

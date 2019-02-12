@@ -27,6 +27,7 @@ function _init() {
    new MobileNav(get_regular_menu_items())
 
    SectionFactory("BannerSection")
+   SectionFactory("TabmenuSection")
    new Footer()
 }
 

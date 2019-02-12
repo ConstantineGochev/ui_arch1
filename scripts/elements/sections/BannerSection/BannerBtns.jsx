@@ -1,1 +1,0 @@
-export const BannerBtns = () => $('<ul class="banner-btns-ul"><li>One</li><li>Two</li><li>Three</li></ul>')

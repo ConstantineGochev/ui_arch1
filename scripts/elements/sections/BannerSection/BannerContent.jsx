@@ -1,1 +1,0 @@
-export const BannerContent  = (_content : string) => $(`<p class="banner-content">${_content}</p>`)

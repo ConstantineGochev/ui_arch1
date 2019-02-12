@@ -1,25 +1,16 @@
 import { root } from '../../../constants.jsx'
-import { Banner_Img } from './Banner_Img.jsx';
-import { Banner } from './Banner.jsx';
-import { BannerBtns } from './BannerBtns.jsx';
-import { BannerContent } from './BannerContent.jsx';
-import { BannerContainer } from './BannerContainer.jsx';
 
 export default class BannerSection {
     constructor() {
-        this.container = BannerContainer()
-        this.banner = Banner()
-        this.content = BannerContent('Content Lorem impsum content test text.')
-        this.btns = BannerBtns()
-        this.img_holder = Banner_Img()
+        this.container = $('<div id="banner-container"></div>')
+        this.banner = $(`<div class="banner"></div>`)
+        this.content = $(`<p class="banner-content">Content Lorem impsum content test text.</p>`)
+        this.btns = $('<ul class="banner-btns-ul"><li>One</li><li>Two</li><li>Three</li></ul>')
+        this.img_holder = $('<p class="banner-img">Banner-Image</p>')
         this.init()
     }
     init(foce = true) {
-        // const container = BannerContainer()
-        // const banner = Banner()
-        // const content = BannerContent('Content Lorem impsum content test text.')
-        // const btns = BannerBtns()
-        // const img_holder = Banner_Img()
+        
         this.container
             .append(this.banner)
             .append(this.img_holder)

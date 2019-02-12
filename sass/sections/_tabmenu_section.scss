@@ -1,0 +1,60 @@
+#tabs {
+  .tabs_item {
+    display: none;
+  }
+  .active {
+    @include create_grid_container(100%, 50vh, center, center, 1, 2, 0);
+    text-align: center;
+  }
+  #tabmenu {
+    @include create_flex_container(row, wrap, center, center);
+    width: 95%;
+    margin: 5px auto;
+    border: 1px solid black;
+    border-left: transparent;
+    border-right: transparent;
+    .tabmenu-item {
+      cursor: pointer;
+      flex: 1;
+      text-align: center;
+      font-size: 10px;
+      margin: 5px;
+      width: 15%;
+      height: 50px;
+      padding: $btn_tabmenu_padding;
+      background: rgb(0, 86, 97);
+      @include create_flex_container(row, wrap, center, center);
+
+      a {
+        width: 100%;
+        color: white;
+        font-family: "Varela Round", sans-serif;
+      }
+    }
+  }
+  .tabmenu-content-container {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .tabmenu-content {
+      overflow: hidden;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      font-size: 200%;
+    }
+  }
+  .inner-tabmenu-img-container {
+    max-width: 100%;
+    height: calc(50vh - 4px);
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .inner-tabmenu-text-container {
+    text-align: center;
+  }
+}

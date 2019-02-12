@@ -1,18 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Varela+Round|Cinzel|Josefin+Sans');
-@import 'constants';
-@import 'mixins';
-@import 'extends';
-@import 'keyframes';
-@import 'sections/banner_section';
-@import 'footer/footer';
+@import url("https://fonts.googleapis.com/css?family=Varela+Round|Cinzel|Josefin+Sans");
+@import "constants";
+@import "mixins";
+@import "extends";
+@import "keyframes";
+@import "sections/banner_section";
+@import "sections/tabmenu_section";
+@import "footer/footer";
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   list-style-type: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
+  text-decoration: none;
 }
 
 body {
@@ -30,21 +32,29 @@ body {
   .toggle-icon {
     display: none;
   }
-  .fa-anchor {
-    margin-left: 10px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    background-image: linear-gradient(
-      to bottom,
-      darken(rgba(255, 217, 0, 0.8), 5%),
-      darken(rgba(255, 217, 0, 0.8), 10%),
-      darken(rgba(255, 217, 0, 0.8), 15%),
-      darken(rgba(255, 217, 0, 0.8), 20%)
-    );
-    color: lighten($base_color, 25%);
-    padding: 0.5rem;
-    border-radius: 50%;
+  #site-title-container {
+    height: 100%;
+    width: 50px;
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
+  // .fa-anchor {
+  //   margin-left: 10px;
+  //   cursor: pointer;
+  //   font-size: 1.5rem;
+  //   background-image: linear-gradient(
+  //     to bottom,
+  //     darken(rgba(255, 217, 0, 0.8), 5%),
+  //     darken(rgba(255, 217, 0, 0.8), 10%),
+  //     darken(rgba(255, 217, 0, 0.8), 15%),
+  //     darken(rgba(255, 217, 0, 0.8), 20%)
+  //   );
+  //   color: lighten($base_color, 25%);
+  //   padding: 0.5rem;
+  //   border-radius: 50%;
+  // }
 }
 #pc_items_ul {
   @include create_flex_container(row, wrap, flex-end, center);
@@ -114,11 +124,8 @@ body {
   display: none;
 }
 
+
 @import "navigation/laptop";
 @import "navigation/tablet";
 @import "navigation/mobile";
-@import "navigation/secondary_mobile"
-
-
-
-
+@import "navigation/secondary_mobile";
