@@ -13,7 +13,7 @@ class FullScreenNav implements Navigation {
         this.nav_special_items_wrapper = $('<ul id="pc_special_items_ul"></ul>')
 
         this.toggle_menu_icon_container = $('<p class="toggle-icon"><i class="fas fa-bars"></i></p>')
-        this.site_title_icon = $('<p id="site-title-container"><img src="../../../public/crystal4.svg"></p>')
+        this.site_title_icon = $('<p id="site-title-container"><img src="../../../images/drawing-1.svg"></p>')
 
         this.init()
     }

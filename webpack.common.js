@@ -1,17 +1,22 @@
 const path = require('path');
 var webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+
+const VENDOR_LIBS = [
+"jquery",
+]
 
 var config = {
-  mode: 'development',
+ // target: "node",
   entry: {
-    app: './scripts/index.jsx',
-
+    bundle: './scripts/index.jsx',
+    vendor: VENDOR_LIBS
   },
   output: {
     path: path.join(__dirname, 'public'),
-    filename: 'bundle.js',
-    publicPath: '/'
+    filename: '[name].js',
   },
   module: {
     rules: [{
@@ -35,24 +40,17 @@ var config = {
           loader: "css-loader"
         }, {
           loader: "sass-loader",
-          options: {
-            includePaths: ["absolute/path/a", "absolute/path/b"]
-          }
         }]
       },
-      {
-        test: require.resolve('jquery'),
-        use: [{
-          loader: 'expose-loader',
-          options: 'jQuery'
-        }, {
-          loader: 'expose-loader',
-          options: '$'
-        }]
-      },
-      
     ]
   },
+  plugins: [
+    new CleanWebpackPlugin(['public']),
+    new HtmlWebpackPlugin({
+      title: 'AnchorChain',
+      template: 'index.html'
+    })
+  ]
 };
 
 

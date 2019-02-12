@@ -1,4 +1,4 @@
-require("expose-loader?$!jquery");
+require("jquery");
 require("../sass/main.scss")
 
 import { FullScreenNav } from './elements/header/full_screen_nav.jsx'
