@@ -8,7 +8,7 @@ export default class TabmenuSection {
         this.tabmenu_container = $('<div id="tabs"></div>')
         this.tabmenu = $('<ul id="tabmenu"></ul>')
         this.tabmenu_content = $('<div class="tabmenu-content-container"></div>')
-        this.get_tab_menu_item = (i, content) => $(`<li class="tabmenu-item"><a href="#tabs_${i}">${content}</a></li>`)
+        this.get_tab_menu_item = (content) => $(`<li class="tabmenu-item"><a>${content}</a></li>`)
         this.init()
     }
 
@@ -16,7 +16,7 @@ export default class TabmenuSection {
         this.tabmenu_container.append(this.tabmenu)
 
         for (let i = 0; i < Tabmenu_Items.length; i++) {
-            this.tabmenu.append(this.get_tab_menu_item(i + 1, Tabmenu_Items[i]))
+            this.tabmenu.append(this.get_tab_menu_item(Tabmenu_Items[i]))
             this.tabmenu_container
                 .append(create_inner_tabmenu_container(`tabs_item`, Tabmenu_imgs[i], Tabmenu_Headings[i], Tabmenu_Infos[i]))
         }

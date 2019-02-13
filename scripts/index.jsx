@@ -6,12 +6,19 @@ import { MobileNav } from './elements/header/mobile_navigation.jsx'
 import SectionFactory from './elements/sections/factory.jsx'
 import { base_button, special_button } from './elements/button/index.jsx'
 import { menu_items, special_menu_items } from './constants.jsx'
-import  Footer from './elements/footer/footer.jsx';
+import Footer from './elements/footer/footer.jsx';
 
 function get_regular_menu_items() {
    let menu_btns = []
 
-   menu_items.forEach(item => menu_btns.push(base_button(item)))
+   menu_items.forEach((item, index) => {
+      let href_id = "#";
+
+      if (index === 0) { href_id = "#menu-container" }
+      else if (index === 1) { href_id = "#banner-container" }
+
+      menu_btns.push(base_button(href_id, item))
+   })
    return menu_btns
 }
 function get_special_menu_items() {
@@ -22,7 +29,7 @@ function get_special_menu_items() {
 }
 
 function _init() {
-
+   //setTimeout(() => { $('#modal-window').show() }, 5000) // Open Modal in 5s.
    new FullScreenNav(get_regular_menu_items(), get_special_menu_items())
    new MobileNav(get_regular_menu_items())
 
@@ -32,6 +39,3 @@ function _init() {
 }
 
 _init()
-
-
-

@@ -8,7 +8,7 @@ class FullScreenNav implements Navigation {
     constructor(_nav_items: Array<Elements>,_nav_special_items: Array<Elements> , options: Object) {
         this.nav_items = _nav_items
         this.nav_special_items = _nav_special_items
-        this.pc_menu_container = $('<div id="menu-container" class="shrink-nav"></div>')
+        this.pc_menu_container = $('<div id="menu-container"></div>')
         this.nav_items_wrapper = $('<ul id="pc_items_ul"></ul>')
         this.nav_special_items_wrapper = $('<ul id="pc_special_items_ul"></ul>')
 
@@ -22,9 +22,9 @@ class FullScreenNav implements Navigation {
         root.append(this.pc_menu_container)
         this.create_nav_items()
 
-        stretch_menu($('#menu-container'), $('#pc_items_ul > li > .special-btn'));
-        hover_btns($('.regular-btn'), $('.special-btn'))
-        active_btns($('#pc_items_ul > li > button'), 'active');
+        stretch_menu($('#menu-container'));
+        hover_btns($('.regular-btn'))
+        active_btns($('#pc_items_ul > li > a'), 'active-reg-nav-btn');
     }
 
     create_nav_items(): void {

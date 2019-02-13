@@ -4,7 +4,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 99999;
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
 }
@@ -27,7 +27,7 @@
   @keyframes shrink_nav {
     from {
       background: rgba($base_color, 0.9);
-      padding: 0;
+      padding: 0.5rem 0;
     }
     to {
       background: rgba($base_color, 0);
@@ -47,7 +47,7 @@
     }
     to {
       background: rgba($base_color, 0.9);
-      padding: 0;
+      padding: 0.5rem 0;
     }
   }
 }
