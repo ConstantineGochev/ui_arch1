@@ -14,3 +14,17 @@ export const Tabmenu_imgs: Array<string> = [
     'https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
     'https://images.pexels.com/photos/1097946/pexels-photo-1097946.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
 ]
+export const Teamcard_Avatars : Array<string> = [
+    'https://semantic-ui.com/images/avatar2/large/kristy.png',
+    'https://semantic-ui.com/images/avatar2/large/matthew.png',
+    'https://semantic-ui.com/images/avatar2/large/molly.png',
+    'https://semantic-ui.com/images/avatar2/large/elyse.png',
+    'https://semantic-ui.com/images/avatar2/large/kristy.png',
+    'https://semantic-ui.com/images/avatar2/large/matthew.png',
+    'https://semantic-ui.com/images/avatar2/large/molly.png',
+    'https://semantic-ui.com/images/avatar2/large/elyse.png'
+];
+
+export const Teamcard_Headings : Array<string> = ['test card heading','test 2 card heading', 'team 3 card test heading', 'team 4 card test heading','test card heading','test 2 card heading', 'team 3 card test heading', 'team 4 card test heading'];
+export const Teamcard_Job_Positions : Array<string> = ['test card job-position','test 2 card job-position','team 3 job position heading', 'team 4 job position heading','test card job-position','test 2 card job-position','team 3 job position heading', 'team 4 job position heading'];
+export const Teamcard_Personal_Infos : Array<string> = ['test card personal-info lorem ipsum lorem ipsum ','test 2lorem ipsum lorem ipsum  card personal-info','test 333 lorem ipsum lorem ipsum  card personal-info','test 444 lorem ipsum lorem ipsum  card personal-info','test card personal-info lorem ipsum lorem ipsum ','test 2lorem ipsum lorem ipsum  card personal-info','test 333 lorem ipsum lorem ipsum  card personal-info','test 444 lorem ipsum lorem ipsum  card personal-info'];

@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     z-index: 99999;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
     display: none;
 }
 %fixed_main_nav {
@@ -26,7 +26,7 @@
 
   @keyframes shrink_nav {
     from {
-      background: rgba($base_color, 0.9);
+      background: rgba(darken($base_color, 50%), 0.6);
       padding: 0.5rem 0;
     }
     to {
@@ -42,11 +42,13 @@
 
   @keyframes enlarge_nav {
     from {
+      box-shadow: transparent;
       background: rgba($base_color, 0);
       padding: 1rem 0;
     }
     to {
-      background: rgba($base_color, 0.9);
+      box-shadow: 0px 3px 5px 0px rgb(3, 25, 87);
+      background: rgba(darken($base_color, 45%), 0.9);
       padding: 0.5rem 0;
     }
   }

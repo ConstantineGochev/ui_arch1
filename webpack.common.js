@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 const VENDOR_LIBS = [
-"jquery",
+"jquery", "muuri", "aos"
 ]
 
 var config = {

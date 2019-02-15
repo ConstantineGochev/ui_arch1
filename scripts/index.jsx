@@ -1,6 +1,6 @@
 require("expose-loader?$!jquery");
 require("../sass/main.scss")
-
+import AOS from 'aos'
 import { FullScreenNav } from './elements/header/full_screen_nav.jsx'
 import { MobileNav } from './elements/header/mobile_navigation.jsx'
 import SectionFactory from './elements/sections/factory.jsx'
@@ -14,8 +14,9 @@ function get_regular_menu_items() {
    menu_items.forEach((item, index) => {
       let href_id = "#";
 
-      if (index === 0) { href_id = "#menu-container" }
-      else if (index === 1) { href_id = "#banner-container" }
+      if (index === 0) { href_id = "#banner-container" }
+      else if (index === 1) { href_id = "#tabs" }
+      else if (index === 4) { href_id = "#our-team" }
 
       menu_btns.push(base_button(href_id, item))
    })
@@ -27,14 +28,18 @@ function get_special_menu_items() {
    special_menu_items.forEach(item => special_menu_btns.push(special_button(item)))
    return special_menu_btns;
 }
-
+function initialize_AOS() {
+   return AOS.init();
+}
 function _init() {
    //setTimeout(() => { $('#modal-window').show() }, 5000) // Open Modal in 5s.
+   initialize_AOS();
    new FullScreenNav(get_regular_menu_items(), get_special_menu_items())
    new MobileNav(get_regular_menu_items())
 
    SectionFactory("BannerSection")
    SectionFactory("TabmenuSection")
+   SectionFactory("TeamSection")
    new Footer()
 }
 

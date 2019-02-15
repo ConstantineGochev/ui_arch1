@@ -16,8 +16,9 @@ function stretch_menu(selector) {
                 selector.removeClass('enlarge-nav')
                 selector.addClass('shrink-nav') 
             }
-
         }
+
+        
     })
 }
 

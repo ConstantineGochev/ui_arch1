@@ -1,0 +1,8 @@
+$fix_grid: "only screen and (min-width: 1060px) and (max-width: 1600px)";
+
+@media #{fix_grid} {
+    #root > div.grid.muuri > div {
+        //background: green;
+        width: 22vw;
+    }
+}

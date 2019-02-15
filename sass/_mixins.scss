@@ -19,10 +19,6 @@
     justify-content: $justify_content;
     align-items: $align_items;
 }
-@mixin body_background($color) {
-    background: linear-gradient(to right,
-    lighten($color, 15%),
-    lighten($color, 25%),
-    lighten($color, 30%),
-    );
+@mixin body_background() {
+    background-image: url("../images/Colorful-Stingrays.svg")
 }

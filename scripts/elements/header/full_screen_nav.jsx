@@ -3,9 +3,11 @@ import { Navigation } from './nav.jsx'
 import { active_btns } from '../../animations/active_btns'
 import { stretch_menu } from '../../animations/stretch_menu'
 import { hover_btns } from '../../animations/hover_btns'
+import { scroll_active_btns } from '../../animations/scroll_active_btns'
+import { smooth_scroll } from '../../animations/smooth_scroll'
 
 class FullScreenNav implements Navigation {
-    constructor(_nav_items: Array<Elements>,_nav_special_items: Array<Elements> , options: Object) {
+    constructor(_nav_items: Array<Elements>, _nav_special_items: Array<Elements>, options: Object) {
         this.nav_items = _nav_items
         this.nav_special_items = _nav_special_items
         this.pc_menu_container = $('<div id="menu-container"></div>')
@@ -23,8 +25,10 @@ class FullScreenNav implements Navigation {
         this.create_nav_items()
 
         stretch_menu($('#menu-container'));
-        hover_btns($('.regular-btn'))
+        hover_btns($('.regular-btn'), $('.special-btn'))
         active_btns($('#pc_items_ul > li > a'), 'active-reg-nav-btn');
+        scroll_active_btns();
+        smooth_scroll();
     }
 
     create_nav_items(): void {
@@ -36,7 +40,12 @@ class FullScreenNav implements Navigation {
         this.nav_items.forEach(item => this.nav_items_wrapper.append(item))
 
         this.nav_special_items
-        .forEach(special_item => this.nav_special_items_wrapper.append(special_item))
+            .forEach((special_item,i) => {
+                if (i === this.nav_special_items.length -1) { 
+                    special_item = special_item.append('<i class="fas fa-globe-africa"></i>')
+                }
+                this.nav_special_items_wrapper.append(special_item)
+            })
 
         this.pc_menu_container.append(this.nav_items_wrapper)
         this.pc_menu_container.append(this.nav_special_items_wrapper)

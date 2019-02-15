@@ -1,16 +1,10 @@
-
-// Creating Toggle Menu.
-
 function toggle_menu() {
-    console.log('asd')
-    
     let toggle_btn = $('#menu-container > p')
-    console.log(toggle_btn)
     let modal_and_close_icon = $('#close-icon-container > i, #modal-window')
 
     let mobile_menu = $('#mobile-menu');
     let modal_window = $('#modal-window')
-    console.log(modal_window)
+
     toggle_btn.click(() => { open_mobile_menu(modal_window, mobile_menu) })
     modal_and_close_icon.click(() => { close_mobile_menu(modal_window, mobile_menu) })
 
