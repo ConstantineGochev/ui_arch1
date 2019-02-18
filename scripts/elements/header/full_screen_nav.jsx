@@ -3,7 +3,7 @@ import { Navigation } from './nav.jsx'
 import { active_btns } from '../../animations/active_btns'
 import { stretch_menu } from '../../animations/stretch_menu'
 import { hover_btns } from '../../animations/hover_btns'
-import { scroll_active_btns } from '../../animations/scroll_active_btns'
+// import { scroll_active_btns } from '../../animations/scroll_active_btns'
 import { smooth_scroll } from '../../animations/smooth_scroll'
 
 class FullScreenNav implements Navigation {
@@ -27,7 +27,6 @@ class FullScreenNav implements Navigation {
         stretch_menu($('#menu-container'));
         hover_btns($('.regular-btn'), $('.special-btn'))
         active_btns($('#pc_items_ul > li > a'), 'active-reg-nav-btn');
-        scroll_active_btns();
         smooth_scroll();
     }
 

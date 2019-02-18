@@ -1,19 +1,51 @@
 function scroll_active_btns() {
-    
-    $(window).scroll(() => {
-        let scrollTop = $(window).scrollTop();
-        
-        $('#pc_items_ul > li > a').each(function () {
-            $(this).removeClass('active-reg-nav-btn')
-        })
 
-        if (scrollTop >= 0 && scrollTop <= 600) {
-            $('a[href="#banner-container"]').addClass('active-reg-nav-btn')
+    $(document).ready(function () {
+        $('#pc_items_ul > a').bind('click', function (e) {
+            e.preventDefault(); // prevent hard jump, the default behavior
+
+            var target = $(this).attr("href"); // Set the target as variable
+
+            // perform animated scrolling by getting top-position of target-element and set it as scroll target
+            $('html, body').stop().animate({
+                scrollTop: $(target).offset().top
+            }, 600, function () {
+                location.hash = target; //attach the hash (#jumptarget) to the pageurl
+            });
+
+            return false;
+        });
+    });
+
+    $(window).scroll(function () {
+        var scrollDistance = $(window).scrollTop();
+
+        // Show/hide menu on scroll
+        //if (scrollDistance >= 850) {
+        //		$('nav').fadeIn("fast");
+        //} else {
+        //		$('nav').fadeOut("fast");
+        //}
+
+        // Assign active class to nav links while scolling
+        let arr = [
+            $('#banner-container'),
+            $('#tabs'),
+            $('#roadmap-container'),
+            $('#about-container'),
+            $('#our-team')
+        ]
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i].position().top)
+            
         }
-        else if (scrollTop >= 601 && scrollTop <= 900){
-            $('a[href="#tabs"]').addClass('active-reg-nav-btn')
-        }
-    })
+        $('.page-section').each(function (i) {
+            if ($(this).position().top <= scrollDistance) {
+                $('.navigation a.active').removeClass('active');
+                $('.navigation a').eq(i).addClass('active');
+            }
+        });
+    }).scroll();
 }
 
 export {

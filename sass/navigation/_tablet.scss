@@ -1,13 +1,20 @@
-$tablet_resolution: "only screen and (min-width: 630px) and (max-width: 916px)";
+$tablet_resolution: "only screen and (min-width: 765px) and (max-width: 989px)";
 @media #{$tablet_resolution} {
     body {
         padding-top: 2.5rem;
     }
     #menu-container {
+
         flex-direction: column;
+        #site-title-container {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
         #pc_items_ul {
             height: auto;
             margin: 5px 0;
+            margin-bottom: 1rem;
         }
         #pc_special_items_ul {
             
@@ -24,7 +31,6 @@ $tablet_resolution: "only screen and (min-width: 630px) and (max-width: 916px)";
             margin: 0;
             padding: 0.1rem;
             font-size: 1.2rem;
-
         }
     }
     #mobile-menu {

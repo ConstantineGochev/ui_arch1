@@ -6,7 +6,7 @@ function move_teamcards() {
         layoutOnInit: true,
     });
 
-    let items_random_sort = document.querySelector('h2');
+    let items_random_sort = document.querySelector('#our-team');
 
     items_random_sort.addEventListener('click', function () {
         const random_count = (a, b) => 0.5 - Math.random()

@@ -1,4 +1,5 @@
-h2 {
+#our-team {
+  padding-top: 4.2rem;
   font-family: "Varela Round", sans-serif;
   cursor: pointer;
   text-align: center;
@@ -8,6 +9,7 @@ h2 {
   background: rgba(rgb(80, 80, 216), 0.5);
   border-bottom: 2px solid rgba(lighten($base_color, 15%), 0.8);
 }
+
 .grid {
 
   position: relative;

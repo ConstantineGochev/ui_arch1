@@ -7,7 +7,10 @@
 @import "keyframes";
 @import "sections/banner_section";
 @import "sections/tabmenu_section";
+@import "sections/about_section";
+@import "sections/roadmap_section";
 @import "sections/team_section";
+@import "sections/get_in_touch_section";
 @import "footer/footer";
 
 * {
@@ -16,8 +19,14 @@
   box-sizing: border-box;
   list-style-type: none;
   font-family: "Montserrat", sans-serif;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-decoration: none;
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
+  }
 }
 
 body {
@@ -53,18 +62,18 @@ body {
   }
 }
 #pc_items_ul {
-  @include create_flex_container(row, wrap, flex-end, center);
+  @include create_flex_container(row, wrap, flex-start, center);
   flex-grow: 1;
   color: rgb(239, 248, 104);
   height: 50px;
-  margin-right: 2rem;
+  margin-left: 5rem;
 
   .regular-btn {
     font-family: "Audiowide", cursive;
     background: none;
     border: 2px solid rbga(255, 255, 255, 0);
     z-index: 999;
-    color: rgb(250, 255, 203);//rgb(53, 45, 8);
+    color: rgb(250, 255, 203); //rgb(53, 45, 8);
     user-select: $select_none;
     cursor: pointer;
     margin: $btn_margin;
@@ -77,16 +86,15 @@ body {
   }
   .active-reg-nav-btn {
     color: rgb(86, 255, 227);
-    border-bottom: 1px solid rgb(86, 255, 227);
+    border-bottom: 2px solid rgb(86, 255, 227);
     transition: background 1s, color 1s;
   }
 }
 #pc_special_items_ul {
   @include create_flex_container(row, wrap, center, center);
   margin-right: 1rem;
-  i.fas:nth-child(2) {
+  .fa-globe-africa {
     color: rgb(86, 255, 227);
-    font-size: 1.4rem;
     cursor: pointer;
   }
   .special-btn {
@@ -103,15 +111,9 @@ body {
     border-radius: 50px;
     font-size: 14px;
     transition: border 1s;
-    border: 1px solid transparent;
-    // .fa-arrow-alt-circle-down {
-    //   font-size: 16px;
-    //   position: absolute;
-    //   top: 10px;
-    //   right: -5px;
-    // }
+    border: 2px solid transparent;
     &:hover {
-      border: 1px solid rgb(86, 255, 227);
+      border: 2px solid rgb(86, 255, 227);
     }
   }
   .active-special-btn:before {
@@ -123,29 +125,57 @@ body {
     height: 100%;
     border-radius: 50px;
     display: inline-block;
-
-    //background: rgba(0, 0, 0, 0.219);
-    // animation-name: special_btn_animation;
-    // animation-duration: 0.5s;
-    // animation-fill-mode: forwards;
-    // animation-timing-function: ease-out;
     overflow: hidden;
-    @keyframes special_btn_animation {
-      0% {
-        opacity: 1;
-        box-shadow: 0px 0px 3px 4px rgba(0, 204, 255, 0.3);
+  }
+}
+  #mobile-menu {
+    padding: 0 1rem;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: -53%;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+      darken($base_color, 5%),
+      darken($base_color, 10%),
+      darken($base_color, 15%),
+      darken($base_color, 20%)
+    );
+    #close-icon-container {
+      margin-top: 1rem;
+      text-align: right;
+    }
+    #mobile-items {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        border-top: 2px solid rgba(rgb(86, 255, 227), 0.5);
+        border-bottom: 2px solid rgba(rgb(86, 255, 227), 0.5);
+        color: rgb(255, 255, 255);
+        background: lighten($base_color, 10%);
+        text-align: center;
+        padding: 6px 0;
+        margin: 0;
+        position: absolute;
+        width: 100%;
+        top: -10%;
+        left: 0;
+        cursor: pointer;
+        &:hover {
+          color: black;
+        }
       }
-      100% {
-        opacity: 0;
-        box-shadow: none;
+      .mobile-active {
+        color: black;
+        background: lighten(rgb(49, 114, 255), 10%);
       }
     }
   }
-}
-#mobile-menu {
-  display: none;
-}
-@import "media_queries";
+// @import "media_queries";
 @import "navigation/laptop";
 @import "navigation/tablet";
 @import "navigation/mobile";

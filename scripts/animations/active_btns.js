@@ -1,18 +1,19 @@
 function active_btns(selector, className) {
     let nav_items = selector
     $('a[href="#banner-container"]').addClass(className)
-    nav_items.each(function (index) {
+
+    nav_items.each(function () {
 
         $(this).click(() => {
+            nav_items.removeClass(className)
 
-            nav_items.each(function () {
-                $(this).removeClass(`${className}`)
-            })
-            if (!$(this).hasClass('special-btn')) {
-                $(this).addClass(`${className}`)
-            }
+            $(this).addClass(className)
         })
     })
+
+    function active_mobile_menu_btns(selector) {
+        
+    }
 }
 
 export {

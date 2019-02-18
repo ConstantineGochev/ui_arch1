@@ -1,9 +1,10 @@
-$laptop_resolution: "only screen and (min-width: 917px) and (max-width: 1059px)";
+$laptop_resolution: "only screen and (min-width: 990px) and (max-width: 1350px)";
 
 @media #{$laptop_resolution} {
   #menu-container {
+    //flex-direction: column;
     i {
-        font-size: 1rem;
+      //font-size: 4rem;
     }
     #pc_items_ul {
       margin: 0;
@@ -12,13 +13,15 @@ $laptop_resolution: "only screen and (min-width: 917px) and (max-width: 1059px)"
           font-size: 11px;
         }
       }
-
     }
     #pc_special_items_ul {
-        margin-right: 0;
-        .special-btn {
-          font-size: 10px;
-        }
+      //display: block;
+      margin-right: 0;
+      .special-btn {
+        margin: 0;
+        padding: 0.5rem;
+        font-size: 10px;
       }
+    }
   }
 }
