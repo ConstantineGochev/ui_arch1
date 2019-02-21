@@ -2,10 +2,6 @@ $laptop_resolution: "only screen and (min-width: 990px) and (max-width: 1350px)"
 
 @media #{$laptop_resolution} {
   #menu-container {
-    //flex-direction: column;
-    i {
-      //font-size: 4rem;
-    }
     #pc_items_ul {
       margin: 0;
       li {
@@ -15,7 +11,6 @@ $laptop_resolution: "only screen and (min-width: 990px) and (max-width: 1350px)"
       }
     }
     #pc_special_items_ul {
-      //display: block;
       margin-right: 0;
       .special-btn {
         margin: 0;

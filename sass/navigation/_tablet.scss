@@ -1,39 +1,62 @@
 $tablet_resolution: "only screen and (min-width: 765px) and (max-width: 989px)";
 @media #{$tablet_resolution} {
-    body {
-        padding-top: 2.5rem;
+  body {
+    padding-top: 2.5rem;
+  }
+  #menu-container {
+    flex-direction: column;
+    #site-title-container {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
     }
-    #menu-container {
-
-        flex-direction: column;
-        #site-title-container {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-        }
-        #pc_items_ul {
-            height: auto;
-            margin: 5px 0;
-            margin-bottom: 1rem;
-        }
-        #pc_special_items_ul {
-            
-            margin: 0;
-            margin-bottom: 5px 0;
-            .special-btn {
-                padding: 0.3rem 0.25rem;
-            }
-        }
-        .fa-anchor {
-            position: absolute;
-            top: 0;
-            left: 0;
-            margin: 0;
-            padding: 0.1rem;
-            font-size: 1.2rem;
-        }
+    #pc_items_ul {
+      height: auto;
+      margin: 5px 0;
+      margin-bottom: 1rem;
     }
-    #mobile-menu {
-        display: none;
+    #pc_special_items_ul {
+      margin: 0;
+      margin-bottom: 5px 0;
+      .special-btn {
+        padding: 0.3rem 0.25rem;
+      }
     }
+    .fa-anchor {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0.1rem;
+      font-size: 1.2rem;
+    }
+  }
+  // #mobile-menu {
+  //   display: none;
+  // }
+  #tabs {
+    #tabmenu {
+      .tabmenu-item {
+        margin: 0;
+        padding: 0;
+        
+        a {
+          width: 85%;
+          font-size: 10px !important;
+          font-weight: bold;
+        }
+      }
+    }
+    .active {
+      height: 40vh;
+      .inner-tabmenu-img-container {
+        height: calc(40vh - 4px);
+      }
+    }
+  }
+  #team-advisors > div {
+    width: 32%;
+    height: 40vh;
+    margin: 5px;
+  }
 }

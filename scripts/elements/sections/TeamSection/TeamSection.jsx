@@ -5,8 +5,8 @@ import { team_card } from '../../../utils.jsx'
 
 export default class TeamSection {
     constructor() {
-        this.section_container = $('<div id="team-advisors" class="grid"></div>')
-        this.section_header = $('<p><h2 id="our-team">Our Team</h2></p>')
+        this.section_container = $('<div id="team-advisors" class="grid" data-aos="fade-up" data-aos-duration="1500"></div>')
+        this.section_header = $('<h2 id="our-team" class="page-section">Our Team</h2>')
         this.init()
     }
     add_cards_to_teamsection() {

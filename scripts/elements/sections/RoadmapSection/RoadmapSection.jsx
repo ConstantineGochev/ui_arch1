@@ -2,7 +2,7 @@ import { root } from "../../../constants.jsx"
 
 export default class RoadmapSection {
     constructor() {
-        this.container = $('<div data-aos="flip-right" id="roadmap-container"></div>')
+        this.container = $('<div id="roadmap-container" class="page-section" data-aos="zoom-in" data-aos-duration="1500"></div>')
         this.heading = $('<h2>Road-Map</h2>')
         this.info = $('<p>Plan for project development as follow</p>')
         this.map_img = $('<p class="roadmap-img"></p>')

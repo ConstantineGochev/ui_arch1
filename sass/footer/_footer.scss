@@ -1,8 +1,5 @@
 #footer-container {
-  background-color: #3d87ff;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%234a99bf' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23a1a42c' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2366a7ba' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23838f58' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%236b9ba5' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%2388875b' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2377968d' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%235e6b78' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23838c67' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%234b5e8c' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23a69726' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23344092' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-size: cover;
+  @extend %footer_background;
   @include create_grid_container(100%, 50vh, center, center, auto, 2, 5%);
   padding: 1rem;
   margin: 0 auto;
